@@ -1,0 +1,5 @@
+<% if current_user.request_token %>
+    <h1>Hello</h1>
+<% else %>
+    <%= link_to "Connect Your TMDB Profile", "https://www.themoviedb.org/auth/access?request_token=#{@request_token}" %>
+<% end %>
