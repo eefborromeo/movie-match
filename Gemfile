@@ -60,3 +60,4 @@ gem 'net-pop', require: false
 gem 'net-imap', require: false
 
 gem "faraday", "~> 2.3"
+gem 'devise'
