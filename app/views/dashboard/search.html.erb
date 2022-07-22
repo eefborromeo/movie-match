@@ -1,8 +1,8 @@
-<h1>Let's match you with a movie similar to <%= @search %></h1>
+<h1>Movies similar to <%= @search %></h1>
 <div id="suggestions">
     <ul id="slides">
         <% @similar_movies.each_with_index do |movie, index| %>
-            <li class="slide" data-id="<%= index %>">
+            <li class="slide" data-id="<%= index %>" data-movieId="<%= movie['id'] %>">
                 <div class="container">
                     <div class="image-container">
                         <%= image_tag("https://image.tmdb.org/t/p/original#{movie['poster_path']}") %>
@@ -26,4 +26,3 @@
 <div id="end-of-suggestions">
     Need more movies? Try another <%= link_to "Search", root_path %>
 </div>
-
