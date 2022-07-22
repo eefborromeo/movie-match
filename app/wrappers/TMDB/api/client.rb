@@ -13,8 +13,12 @@ module TMDB
                 send_request(:post, "authentication/session/new?api_key=#{API_KEY}&request_token=#{token}")
             end
 
-            def get_genres
-                send_request(:get,"/genre/movie/list?api_key=#{API_KEY}" )
+            def search_movie_id(keyword)
+                send_request(:get, "search/movie?api_key=#{API_KEY}&language=en-US&query=#{keyword}&page=1&include_adult=false")
+            end
+
+            def get_similar_movies(id)
+                send_request(:get, "movie/#{id}/similar?api_key=#{API_KEY}&language=en-US")
             end
         
 
