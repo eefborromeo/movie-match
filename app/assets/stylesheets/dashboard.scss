@@ -1,3 +1,58 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+#slides {
+	position: relative;
+	height: 600px;
+	padding: 0px;
+	margin: 0px;
+	list-style-type: none;
+}
+
+.slide {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 500px;
+	opacity: 0;
+	z-index: 1;
+
+	-webkit-transition: opacity 1s;
+	-moz-transition: opacity 1s;
+	-o-transition: opacity 1s;
+	transition: opacity 1s;
+	.container {
+		height: 500px;
+		.image-container {
+			height: 400px;
+			aspect-ratio: 2/3;
+			margin: auto;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+		}
+	}
+}
+
+.showing {
+	opacity: 1;
+	z-index: 2;
+}
+
+#end-of-suggestions {
+	display: none;
+	&.show {
+		display: block;
+	}
+}
+
+#suggestions {
+	display: block;
+	&.hide {
+		display: none;
+	}
+}

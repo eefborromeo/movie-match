@@ -1,5 +1,9 @@
 <% if current_user.session_id != nil %>
-    <h1>Dashboard</h1>
+    <form action="/search" method="get">
+        <label for="search">I feel like watching something like:</label>
+        <input id="search" type="text" name="movie" />
+        <button type="submit">Search</button>
+    </form>
 <% else %>
     <%= link_to "Approve Token", "https://www.themoviedb.org/authenticate/#{@token}?redirect_to=http://127.0.0.1:3000/" %>
 <% end %>
