@@ -1,11 +1,29 @@
 <h1>Let's match you with a movie similar to <%= @search %></h1>
-<ul id="slides">
-    <% @similar_movies.each_with_index do |movie, index| %>
-        <li class="slide" data-id="<%= index %>">
-            <%= image_tag("https://image.tmdb.org/t/p/original#{movie['poster_path']}") %>
-            <%= movie["title"] %>
-            <%= movie["vote_average"] %>
-            <%= movie["overview"] %>
-        </li>
-    <% end %>
-</ul>
+<div id="suggestions">
+    <ul id="slides">
+        <% @similar_movies.each_with_index do |movie, index| %>
+            <li class="slide" data-id="<%= index %>">
+                <div class="container">
+                    <div class="image-container">
+                        <%= image_tag("https://image.tmdb.org/t/p/original#{movie['poster_path']}") %>
+                    </div>
+                    <div class="details-container">
+                        <%= movie["title"] %>
+                        <%= movie["vote_average"] %>
+                    </div>
+                    <div class="overview">
+                        <%= movie["overview"] %>
+                    </div>
+                </div>
+            </li>
+        <% end %>
+    </ul>
+    <div id="buttons">
+        <button class="controls" id="decline">No</button>
+        <button class="controls" id="approve">Yes</button>
+    </div>
+</div>
+<div id="end-of-suggestions">
+    Need more movies? Try another <%= link_to "Search", root_path %>
+</div>
+
