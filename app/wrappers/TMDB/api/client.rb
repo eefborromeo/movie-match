@@ -18,13 +18,26 @@ module TMDB
             end
 
             def get_similar_movies(id)
-                send_request(:get, "movie/#{id}/similar?api_key=#{API_KEY}&language=en-US")
+                send_request(:get, "movie/#{id}/similar?api_key=#{API_KEY}&language=en-US&page=#{rand(1..10)}")
             end
-        
 
+            def add_to_watchlist(session_id, id)
+                account_id = get_account_id(session_id)
+                send_request(:post, "account/#{account_id}/watchlist?api_key=#{API_KEY}&session_id=#{session_id}", "{\"media_type\": \"movie\", \"media_id\": #{id},\"watchlist\": true}")
+            end 
+
+            def get_watchlist(session_id)
+                account_id = get_account_id(session_id)
+                send_request(:get, "account/#{account_id}/watchlist/movies?api_key=#{API_KEY}&language=en-US&session_id=#{session_id}&sort_by=created_at.asc&page=1")
+            end
+                
             private
+                
+            def get_account_id(session_id)
+                send_request(:get, "account?api_key=#{API_KEY}")["id"]
+            end
 
-            def send_request(method, resource)
+            def send_request(method, resource, body = nil)
                 connection = Faraday.new(
                     url: BASE_URL, 
                     params: {},
@@ -32,7 +45,7 @@ module TMDB
                         "Authorization" => "Bearer #{BEARER_TOKEN}",
                         "Content-Type" => "application/json;charset=utf-8"
                 })
-                response = connection.public_send(method, resource)
+                response = connection.public_send(method, resource, body)
                 JSON.parse(response.body)
             end
         end
