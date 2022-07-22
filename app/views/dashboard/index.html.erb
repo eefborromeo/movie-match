@@ -1,10 +1,11 @@
 <% if current_user.session_id != nil %>
-    <form action="/search" method="get">
-        <label for="search">I feel like watching something like:</label>
+<div id="dashboard">
+    <form action="/search" method="get" id="search-container">
+        <label for="search">I want to watch something like:</label>
         <input id="search" type="text" name="movie" />
         <button type="submit">Search</button>
     </form>
-    <h1>Watchlist</h1>
+    <h2>WATCHLIST</h2>
         <% if @watchlist.length <= 0 %>
             <h6>Your watchlist is empty</h6>
         <% else %>
@@ -16,6 +17,7 @@
                 <% end %>
             </ul>
         <% end %>
+</div>
 <% else %>
     <%= link_to "Connect Your TMDB Account", "https://www.themoviedb.org/authenticate/#{@token}?redirect_to=http://127.0.0.1:3000/" %>
 <% end %>

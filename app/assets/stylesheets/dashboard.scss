@@ -37,8 +37,49 @@ nav {
 	margin: auto;
 }
 
+#search-container {
+	font-size: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	flex-wrap: nowrap;
+	gap: 5px;
+	label {
+		color: #fff;
+	}
+	input[type='text'] {
+		font-size: 2rem;
+		background: none;
+		border: none;
+		outline: none;
+		border-bottom: 2px solid white;
+		color: #f7a715;
+	}
+	button {
+		background-color: #05235a;
+		color: white;
+		border: none;
+		padding: 1rem;
+	}
+}
+
+#dashboard {
+	h2 {
+		color: #f7a715;
+		font-family: 'Anton', sans-serif;
+	}
+	h6 {
+		text-align: center;
+		font-size: 1.5rem;
+		color: white;
+	}
+}
+
 .grid {
 	display: grid;
+	gap: 15px;
+	padding: 0;
+	list-style-type: none;
 	&.grid-col-5 {
 		grid-template-columns: repeat(5, 1fr);
 		li > img {
