@@ -13,6 +13,18 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <header>
+      <nav>
+        <h1>Movie Match</h1>
+        <% if user_signed_in? %>
+          <ul>
+              <li>
+                <%= link_to "Sign Out",  destroy_user_session_path, method: :delete %>
+              </li>
+          </ul>
+        <% end %>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
