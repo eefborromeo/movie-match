@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.grid {
+	display: grid;
+	&.grid-col-5 {
+		grid-template-columns: repeat(5, 1fr);
+		li > img {
+			width: 100%;
+		}
+	}
+}
+
 #slides {
 	position: relative;
 	height: 600px;

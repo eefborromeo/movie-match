@@ -4,6 +4,18 @@
         <input id="search" type="text" name="movie" />
         <button type="submit">Search</button>
     </form>
+    <h1>Watchlist</h1>
+        <% if @watchlist.length <= 0 %>
+            <h6>Your watchlist is empty</h6>
+        <% else %>
+            <ul class="grid grid-col-5">
+                <% @watchlist.each do |movie| %>
+                    <li>
+                        <%= image_tag("https://image.tmdb.org/t/p/original#{movie['poster_path']}") %>
+                    </li>
+                <% end %>
+            </ul>
+        <% end %>
 <% else %>
     <%= link_to "Approve Token", "https://www.themoviedb.org/authenticate/#{@token}?redirect_to=http://127.0.0.1:3000/" %>
 <% end %>
