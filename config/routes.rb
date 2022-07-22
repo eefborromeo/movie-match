@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get '/dashboard' => 'dashboard#index'
   get '/search' => 'dashboard#search'
+  post '/approve/:id' => 'dashboard#approve'
 
   root to: "dashboard#index"
 end

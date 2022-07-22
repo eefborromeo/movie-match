@@ -7,20 +7,17 @@ window.addEventListener('DOMContentLoaded', () => {
     const endOfSuggestions = document.querySelector('#end-of-suggestions');
     activeSlide.classList.add('showing');
 
-    approve.addEventListener('click', () => nextSlide('approve'));
-    decline.addEventListener('click', () => nextSlide('decline'));
+    approve.addEventListener('click', addToWatchList);
+    decline.addEventListener('click', goToSlide);
 
-    function nextSlide(a) {
-        goToSlide(a);
+    function addToWatchList() {
+        fetch(`/approve/${activeSlide.dataset.movieid}`, {
+            method: "POST",
+        })
+        goToSlide()
     }
     
-    function goToSlide(action) {
-        if (action === "approve") {
-            console.log(action)
-        } else {
-            console.log(action)
-        }
-
+    function goToSlide() {
         activeSlide.classList.remove('showing');
         activeSlide = activeSlide.nextElementSibling;
         if (activeSlide.dataset.id < slides.length - 1) {
