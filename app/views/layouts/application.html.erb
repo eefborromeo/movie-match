@@ -15,7 +15,7 @@
     <p class="alert"><%= alert %></p>
     <header>
       <nav>
-        <h1 class="logo">MOVIE MATCH</h1>
+        <%= link_to "MOVIE MATCH", root_path, class: "logo" %>
         <% if user_signed_in? %>
           <ul>
               <li>
