@@ -7,7 +7,9 @@
     </form>
     <h2>WATCHLIST</h2>
         <% if @watchlist.length <= 0 %>
-            <h6>Your watchlist is empty</h6>
+            <div class="empty-container">
+                <h6>Your watchlist is empty</h6>
+            </div>
         <% else %>
             <ul class="grid grid-col-5">
                 <% @watchlist.each do |movie| %>
