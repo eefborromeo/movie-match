@@ -22,7 +22,9 @@ body {
 	text-transform: uppercase;
 }
 
-#edit_user {
+#edit_user,
+#login,
+#signup {
 	background: #05235a;
 	width: 45%;
 	margin: auto;
@@ -36,6 +38,7 @@ body {
 			border: none;
 			border-bottom: 1px solid white;
 			color: white;
+			outline: none;
 		}
 	}
 
@@ -46,6 +49,22 @@ body {
 			border: none;
 			padding: 1rem;
 			font-weight: bold;
+		}
+	}
+}
+
+#login,
+#signup {
+	text-align: center;
+	#user_remember_me {
+		width: auto;
+	}
+
+	.links-container {
+		margin-top: 20px;
+		a {
+			color: white;
+			text-decoration: none;
 		}
 	}
 }
