@@ -91,7 +91,7 @@ nav {
 
 #slides {
 	position: relative;
-	height: 400px;
+	height: 500px;
 	padding: 0px;
 	margin: 0px;
 	list-style-type: none;
@@ -104,7 +104,7 @@ nav {
 	left: 0px;
 	top: 0px;
 	width: 100%;
-	height: 400px;
+	height: 500px;
 	opacity: 0;
 	z-index: 1;
 	overflow-y: scroll;
@@ -116,7 +116,7 @@ nav {
 	position: relative;
 
 	.image-container {
-		height: 400px;
+		height: 500px;
 		aspect-ratio: 2/3;
 		margin: auto;
 		background-size: cover;
@@ -182,5 +182,19 @@ nav {
 	#buttons {
 		text-align: center;
 		margin-top: 2rem;
+		position: relative;
+
+		.controls {
+			background-color: transparent;
+			border: none;
+			font-size: 2.5rem;
+			&#approve {
+				color: green;
+			}
+
+			&#decline {
+				color: #b90000;
+			}
+		}
 	}
 }
