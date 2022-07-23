@@ -1,28 +1,28 @@
-<h1>Movies similar to <%= @search %></h1>
-<div id="suggestions">
-    <ul id="slides">
-        <% @similar_movies.each_with_index do |movie, index| %>
-            <li class="slide" data-id="<%= index %>" data-movieId="<%= movie['id'] %>">
-                <div class="container">
-                    <div class="image-container">
-                        <%= image_tag("https://image.tmdb.org/t/p/original#{movie['poster_path']}") %>
+<div id="main">
+    <h2>Movies similar to <%= @search %></h2>
+    <div id="suggestions">
+        <ul id="slides">
+            <% @similar_movies.each_with_index do |movie, index| %>
+                <li class="slide" data-id="<%= index %>" data-movieId="<%= movie['id'] %>">
+                    <div class="image-container" style="background-image: url('https://image.tmdb.org/t/p/original<%=movie['poster_path']%>')">
                     </div>
                     <div class="details-container">
-                        <%= movie["title"] %>
-                        <%= movie["vote_average"] %>
+                        <h3><%= movie["title"] %></h3>
+                        <span><i class="fa-solid fa-star"></i><%= movie["vote_average"] %></span>
                     </div>
                     <div class="overview">
+                        <h4>SUMMARY</h4>
                         <%= movie["overview"] %>
                     </div>
-                </div>
-            </li>
-        <% end %>
-    </ul>
-    <div id="buttons">
-        <button class="controls" id="decline">No</button>
-        <button class="controls" id="approve">Yes</button>
+                </li>
+            <% end %>
+        </ul>
+        <div id="buttons">
+            <button class="controls" id="decline"><i class="fa-solid fa-circle-xmark"></i></button>
+            <button class="controls" id="approve"><i class="fa-solid fa-circle-check"></i></button>
+        </div>
     </div>
-</div>
-<div id="end-of-suggestions">
-    Need more movies? Try another <%= link_to "Search", root_path %>
+    <div id="end-of-suggestions">
+        Need more movies? Try another <%= link_to "Search", root_path %>
+    </div>
 </div>

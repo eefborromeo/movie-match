@@ -11,6 +11,7 @@ class DashboardController < ApplicationController
             session = client.get_session_id(params[:request_token])
             current_user.session_id = session["session_id"]
             current_user.save
+            redirect_to root_path
         end
     end
 

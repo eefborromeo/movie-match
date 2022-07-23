@@ -61,3 +61,4 @@ gem 'net-imap', require: false
 
 gem "faraday", "~> 2.3"
 gem 'devise'
+gem "font-awesome-sass", "~> 6.1.1"
