@@ -21,5 +21,8 @@
         <% end %>
 </div>
 <% else %>
-    <%= link_to "Connect Your TMDB Account", "https://www.themoviedb.org/authenticate/#{@token}?redirect_to=http://127.0.0.1:3000/" %>
+    <div id="connect-container">
+        <h2>You need to connect your Movie Match Account with your TMDB account</h2>
+        <%= link_to "Click Here To Connect Your TMDB Account", "https://www.themoviedb.org/authenticate/#{@token}?redirect_to=http://127.0.0.1:3000/", class: "heading" %>
+    </div>
 <% end %>
