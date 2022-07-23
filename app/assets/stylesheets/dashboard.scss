@@ -9,6 +9,58 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+.back {
+	text-decoration: none;
+	color: white;
+	margin-top: 20px;
+	display: block;
+}
+
+.heading {
+	font-family: 'Anton', sans-serif;
+	color: #f7a715;
+	text-transform: uppercase;
+}
+
+#edit_user {
+	background: #05235a;
+	width: 45%;
+	margin: auto;
+	padding: 20px;
+	.field {
+		color: white;
+		margin-bottom: 20px;
+		input {
+			width: 50%;
+			background: none;
+			border: none;
+			border-bottom: 1px solid white;
+			color: white;
+		}
+	}
+
+	.actions {
+		input[type='submit' i] {
+			background-color: #f7a715;
+			color: #1b4796;
+			border: none;
+			padding: 1rem;
+			font-weight: bold;
+		}
+	}
+}
+
+#cancel-user {
+	width: 45%;
+	margin: auto;
+	input[type='submit'] {
+		background: red;
+		color: white;
+		border: none;
+		padding: 1rem;
+	}
+}
+
 nav {
 	display: flex;
 	justify-content: space-between;
@@ -75,6 +127,11 @@ nav {
 		font-size: 1.5rem;
 		color: white;
 	}
+}
+
+.flex {
+	display: flex;
+	gap: 20px;
 }
 
 .grid {

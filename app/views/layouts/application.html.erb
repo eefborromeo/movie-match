@@ -17,7 +17,10 @@
       <nav>
         <%= link_to "MOVIE MATCH", root_path, class: "logo" %>
         <% if user_signed_in? %>
-          <ul>
+          <ul class="flex">
+              <li>
+                <%= link_to "Edit Proile", edit_user_registration_path %>
+              </li>
               <li>
                 <%= link_to "Sign Out",  destroy_user_session_path, method: :delete %>
               </li>
